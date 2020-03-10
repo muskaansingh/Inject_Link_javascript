@@ -1,0 +1,57 @@
+<!--- 1. Ask the user for a URL
+      2. Check if the link starts with http
+      3. If it doesn't start with http, then fix it with a variable
+      4. Inject a link into your page using .innerHTML--->
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8">        
+        <meta name="author" content="CHANGE-ME">
+        <meta name="description" content="CHANGE-ME">
+        <meta name="theme-color" content="#000000">
+        <link rel="shortcut icon" href="favicon.ico">
+        
+        <title>Mini-Project 2</title>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        
+    </head>
+
+    <body>    
+       
+        <h1>Click on the given link : </h1>
+        <span id="getId">______________</span>
+        
+        
+        <script>
+            var url = prompt("Enter the URL : ");
+            
+            if(url == null)
+                {
+                    console.log("Missing input");
+                }
+            else
+                {
+                    if(url.substr(0,4) == "http:")
+                    {
+                        console.log("URL is Good");
+                    }
+                else
+                    {
+                       url = "http://" + url;
+                    }
+            
+            
+            var getUrl = document.getElementById("getId");
+            var html = "<a href='"+url+"'>" + url + "</a>";
+            getUrl.innerHTML = html;
+            
+                }
+                
+            
+            
+        </script>
+    </body>
+</html>
